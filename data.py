@@ -402,14 +402,6 @@ class Data:
                 self.diskServersInDataset.pop(i)
                 self.accesses.pop(i)
                 self.accessesInDataset.pop(i)
-            '''elif self.diskServersInDataset[i] == 1:
-                'Gets rid any dataset with only one disk server in it'
-                self.totalInDataset.pop(i)
-                self.datasets.pop(i)
-                self.noOfFiles.pop(i)
-                self.diskServersInDataset.pop(i)
-                self.accesses.pop(i)
-                self.accessesInDataset.pop(i)'''
 
     def sortByTop10Accesses(self):
         """Sorts the graph so only the top 10 accesses
@@ -889,7 +881,7 @@ class Data:
             for i in range(len(self.datasets)):
                 if i < y + 50 and i > y - 50:
                     for j in range(len(self.diskServers)):
-                        if self.noOfFiles[i][j] < z + 50 and self.noOfFiles[i][j] > z - 50 and j < x + 1 and j > x - 1 and not self.noOfFiles == 0:
+                        if self.noOfFiles[i][j] < z + 50 and self.noOfFiles[i][j] > z - 50 and j < x + 1 and j > x - 1 and not self.noOfFiles[i][j] == 0:
                             self.printInfo(i, j)
                     
             'Prints the coordinates selected'
